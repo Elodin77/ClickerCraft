@@ -27,12 +27,15 @@
       }
       
       function update() {
-        document.getElementById('wood').innerHTML = getCookie("wood");
+        document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
+        document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
+
       }
       function wood() {
         setCookie("wood", Number(getCookie("wood")) + 1, 365);
         update()
       }
+      
       
     </script>
     
@@ -51,6 +54,8 @@
         <td></td>
         <td>
           <div id="wood">0</div>
+          <div id="stone">0</div>
+
         </td>
       </tr>
     </table>
