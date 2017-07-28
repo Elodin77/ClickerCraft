@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.2</p>
+    <p>Version 0.21</p>
     
     <script>
       function setCookie(cname, cvalue, exdays) {
@@ -30,7 +30,7 @@
         document.getElementById('wood').innerHTML = getCookie("wood");
       }
       function wood() {
-        setCookie("wood", getCookie("wood") + 1, 365);
+        setCookie("wood", int(getCookie("wood")) + 1, 365);
         update()
       }
       
@@ -50,7 +50,7 @@
         </td>
         <td></td>
         <td>
-          <div id="wood">"0"</div>
+          <div id="wood">0</div>
         </td>
       </tr>
     </table>
