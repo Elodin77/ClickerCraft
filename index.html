@@ -25,6 +25,12 @@
         }
         return "";
       }
+      function restart() {
+        setCookie("stone", 0, 365);
+        setCookie("wood", 0, 365);
+        setCookie("stonespeed", 0, 365);
+        setCookie("woodspeed", 0, 365);
+        
       
       function update() {
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
