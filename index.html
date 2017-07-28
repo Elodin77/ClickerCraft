@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.23</p>
+    <p>Version 0.30</p>
     
     <script>
       function setCookie(cname, cvalue, exdays) {
@@ -37,6 +37,9 @@
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
         document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
         document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed") + "/click";
+        document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + getCookie("woodspeed") + "/click";
+        document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood") + "/second";
+        document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("stonespeed") + "/click";
 
       }
       function wood() {
@@ -50,6 +53,7 @@
       function pickaxe() {
         if (getCookie("stone") > Number(getCookie("stonespeed"))*10-1) {
           setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
+          setCookie("stone", Number(getCookie("stone")) - Number(getCookie("stonespeed"))*10–1);
         }
         else {
           alert("You do not have enough stone! You need " + String(Number(getCookie("stonespeed"))*10) + "stone.")
@@ -79,6 +83,9 @@
           <div id="wood">-</div>
           <div id="stone">-</div>
           <div id="stonespeed">-</div>
+          <div id="woodspeed">-</div>
+          <div id="autowood">-</div>
+          <div id="autostone">-</div>
 
         </td>
       </tr>
