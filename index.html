@@ -33,7 +33,7 @@
         setCookie("woodspeed", 1, 365);
         setCookie("autowood", 0, 365);
         setCookie("autostone", 0, 365);
-      
+      }
       function update() {
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
         document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
@@ -60,8 +60,7 @@
           alert("You do not have enough stone! You need " + String(Number(getCookie("stonespeed"))*10) + "stone.");
         }
       }
-      
-      
+        
     </script>
     
   </head>
