@@ -28,9 +28,10 @@
       function restart() {
         setCookie("stone", 0, 365);
         setCookie("wood", 0, 365);
-        setCookie("stonespeed", 0, 365);
-        setCookie("woodspeed", 0, 365);
-        
+        setCookie("stonespeed", 1, 365);
+        setCookie("woodspeed", 1, 365);
+        setCookie("autowood", 0, 365);
+        setCookie("autostone", 0, 365);
       
       function update() {
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
@@ -39,7 +40,7 @@
 
       }
       function wood() {
-        setCookie("wood", Number(getCookie("wood")) + 1, 365);
+        setCookie("wood", Number(getCookie("wood")) + Num, 365);
         update()
       }
       function stone() {
