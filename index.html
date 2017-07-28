@@ -43,7 +43,7 @@
 
       }
       function wood() {
-        setCookie("wood", Number(getCookie("wood")) + Num, 365);
+        setCookie("wood", Number(getCookie("wood")) + Number(getCookie("woodspeed")), 365);
         update()
       }
       function stone() {
