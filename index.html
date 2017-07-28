@@ -30,7 +30,7 @@
         document.getElementById('wood').innerHTML = getCookie("wood");
       }
       function wood() {
-        setCookie("wood", int(getCookie("wood")) + 1, 365);
+        setCookie("wood", parseInt(getCookie("wood")) + 1, 365);
         update()
       }
       
