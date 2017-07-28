@@ -3,8 +3,34 @@
     <title>ClickerCraft</title>
     
     <script>
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      
       function update() {
-        return document.cookie.split(" ");
+        document.getElementById('wood').innerHTML = getCookie("wood");
+      }
+      function wood() {
+        setCookie("wood", getCookie("wood") + 1, 365);
+        update()
       }
       
     </script>
@@ -18,9 +44,13 @@
         <th>STUFF</th>
       </tr>
       <tr>
+        <td>
+          <button onclick="wood()">CHOP</button>
+        </td>
         <td></td>
-        <td></td>
-        <td></td>
+        <td>
+          <div id="wood">"0"</div>
+        </td>
       </tr>
     </table>
     
