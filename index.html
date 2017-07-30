@@ -52,8 +52,8 @@
         update()
       }
       function pickaxe() {
-        if (getCookie("stone") > Number(getCookie("stonespeed"))*10-1) {
-          setCookie("stone", Number(getCookie("stone")) - Number(getCookie("stonespeed"))*10);
+        if (getCookie("stone") > Number(getCookie("stonespeed"))*12-1) {
+          setCookie("stone", Number(getCookie("stone")) - Number(getCookie("stonespeed"))*12);
           setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
           
         }
