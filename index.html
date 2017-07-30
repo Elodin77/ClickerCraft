@@ -53,8 +53,9 @@
       }
       function pickaxe() {
         if (getCookie("stone") > Number(getCookie("stonespeed"))*10-1) {
-          setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
           setCookie("stone", Number(getCookie("stone")) - Number(getCookie("stonespeed"))*10);
+          setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
+          
         }
         else {
           alert("You do not have enough stone! You need " + (Number(getCookie("stonespeed"))*10).toString() + " stone.");
