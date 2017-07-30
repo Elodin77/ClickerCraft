@@ -51,7 +51,7 @@
         setCookie("stone", Number(getCookie("stone")) + Number(getCookie("stonespeed")), 365);
         update()
       }
-      function pickaxe() {
+      function rock() {
         if (getCookie("stone") > Math.pow(Number(getCookie("stonespeed")), 3)-1) {
           setCookie("stone", Number(getCookie("stone")) - Math.pow(Number(getCookie("stonespeed")), 3));
           setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
@@ -81,7 +81,7 @@
           <button onclick="stone()">MINE</button>
         </td>
         <td>
-          <button onclick="pickaxe()">ROCK</button><br>
+          <button onclick="rock()">ROCK</button><br>
           <p>Hit a rock with an even bigger rock.</p>
         </td>
         <td>
