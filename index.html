@@ -33,14 +33,19 @@
         setCookie("woodspeed", 1, 365);
         setCookie("autowood", 0, 365);
         setCookie("autostone", 0, 365);
+        setCookie("meat", 0, 365);
+        setCookie("meatspeed", 0, 365);
       }
       function update() {
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
         document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
+        document.getElementById('meat').innerHTML = "Meat: " + getCookie("meat");
         document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed");
         document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + getCookie("woodspeed");
+        document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + getCookie("meatspeed");
         document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood");
         document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone");
+        
 
       }
       function wood() {
@@ -49,6 +54,10 @@
       }
       function stone() {
         setCookie("stone", Number(getCookie("stone")) + Number(getCookie("stonespeed")), 365);
+        update()
+      }
+      function hunt() {
+        setCookie("meat", Number(getCookie("meat")) + Number(getCookie("meatspeed")), 365);
         update()
       }
       function rock() {
@@ -62,7 +71,16 @@
         }
         update()
       }
-      update()
+      function stick() {
+        if(getCookie("wood") > 3) {
+          setCookie("meatspeed", 1, 365);
+          setCookie("wood", Number(getCookie("wood"))-4, 365);
+        }
+        else {
+          alert("You do not have enough wood! You need 4 wood. One for the base, one for the middle, one for the top, and one... well... cause I said.");
+        }
+        update()
+      }
         
     </script>
     <button onclick="restart()">RESTART</button>
@@ -78,19 +96,26 @@
       <tr>
         <td>
           <button onclick="wood()">CHOP</button><br>
-          <button onclick="stone()">MINE</button>
+          <button onclick="stone()">MINE</button><br>
+          <button onclick="meat()">HUNT</button>
         </td>
         <td>
           <button onclick="rock()">BIGGER ROCK</button><br>
           <p>Hit a rock with an even bigger rock.</p>
+          
+          <button onclick="stick()">POINTY STICK</button><br>
+          <p>What do you call a stick with a point on the end? A POINTY STICK!!!!</p<>
+          
         </td>
         <td>
           <div id="wood">-</div>
           <div id="stone">-</div>
+          <div id="meat">-</div>
           <div id="stonespeed">-</div>
           <div id="woodspeed">-</div>
           <div id="autowood">-</div>
           <div id="autostone">-</div>
+          <div id="meatspeed">-</div>
 
         </td>
       </tr>
