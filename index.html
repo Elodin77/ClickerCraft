@@ -67,26 +67,30 @@
         update()
       }
       
-      function rock() {
-        if (getCookie("stone") > Math.pow(Number(getCookie("stonespeed")), 3)-1) {
-          setCookie("stone", Number(getCookie("stone")) - Math.pow(Number(getCookie("stonespeed")), 3));
-          setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
-          
+      function buy(item) {
+        
+        if (item == "rock") {
+          if (getCookie("stone") > Math.pow(Number(getCookie("stonespeed")), 3)-1) {
+            setCookie("stone", Number(getCookie("stone")) - Math.pow(Number(getCookie("stonespeed")), 3));
+            setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
+            
+          }
+          else {
+            alert("You do not have enough stone! You need " + Math.pow(Number(getCookie("stonespeed")), 3).toString() + " stone.");
+          }
+          update()
         }
-        else {
-          alert("You do not have enough stone! You need " + Math.pow(Number(getCookie("stonespeed")), 3).toString() + " stone.");
+        
+        if (item == "stick") {
+          if(getCookie("wood") > 3) {
+            setCookie("meatspeed", 1, 365);
+            setCookie("wood", Number(getCookie("wood"))-4, 365);
+          }
+          else {
+            alert("You do not have enough wood! You need 4 wood. One for the base, one for the middle, one for the top, and one... well... cause I said.");
+          }
+          update()
         }
-        update()
-      }
-      function stick() {
-        if(getCookie("wood") > 3) {
-          setCookie("meatspeed", 1, 365);
-          setCookie("wood", Number(getCookie("wood"))-4, 365);
-        }
-        else {
-          alert("You do not have enough wood! You need 4 wood. One for the base, one for the middle, one for the top, and one... well... cause I said.");
-        }
-        update()
       }
       
       //NON-FUNCTIONS
@@ -115,11 +119,13 @@
           <button onclick="meat('meatspeed')">HUNT</button>
         </td>
         <td>
-          <button onclick="rock()">BIGGER ROCK</button><br>
+          <button onclick="buy('rock')">BIGGER ROCK</button><br>
           <p>Hit a rock with an even bigger rock. (+1 stone/click)</p>
           
-          <button onclick="stick()">POINTY STICK</button><br>
+          <button onclick="buy('stick')">POINTY STICK</button><br>
           <p>Walk around with a stick. (1 meat/click)</p<>
+            
+          
           
         </td>
         <td>
