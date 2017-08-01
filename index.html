@@ -100,8 +100,11 @@
           else {
             alert("You do not have enough wood and stone! You need 20 wood and 10 stone.");
           }
-          
-            
+        }
+        if (item=="windupaxe1") {
+          if (getCookie("wood") > 499 and getCookie("meat") > 299) {
+            setCookie("autowood", 1, 365);
+            setCookie("wood", Num
       }
       
       //NON-FUNCTIONS
