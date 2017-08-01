@@ -5,6 +5,10 @@
 
     
     <script>
+      
+      
+      
+      //FUNCTIONS
       function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -33,6 +37,7 @@
         setCookie("woodspeed", 1, 365);
         setCookie("autowood", 0, 365);
         setCookie("autostone", 0, 365);
+        setCookie("automeat", 0, 365);
         setCookie("meat", 0, 365);
         setCookie("meatspeed", 0, 365);
       }
@@ -45,21 +50,23 @@
         document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + getCookie("meatspeed");
         document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood");
         document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone");
+        document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + getCookie("automeat");
         
 
       }
-      function wood() {
-        setCookie("wood", Number(getCookie("wood")) + Number(getCookie("woodspeed")), 365);
+      function wood(x) {
+        setCookie("wood", Number(getCookie("wood")) + Number(getCookie(x)), 365);
         update()
       }
-      function stone() {
-        setCookie("stone", Number(getCookie("stone")) + Number(getCookie("stonespeed")), 365);
+      function stone(x) {
+        setCookie("stone", Number(getCookie("stone")) + Number(getCookie(x)), 365);
         update()
       }
-      function hunt() {
-        setCookie("meat", Number(getCookie("meat")) + Number(getCookie("meatspeed")), 365);
+      function meat(x) {
+        setCookie("meat", Number(getCookie("meat")) + Number(getCookie(x)), 365);
         update()
       }
+      
       function rock() {
         if (getCookie("stone") > Math.pow(Number(getCookie("stonespeed")), 3)-1) {
           setCookie("stone", Number(getCookie("stone")) - Math.pow(Number(getCookie("stonespeed")), 3));
@@ -81,7 +88,15 @@
         }
         update()
       }
-        
+      
+      //NON-FUNCTIONS
+      
+      setInterval(function() {
+        wood("autowood")
+        stone("autostone")
+        meat("automeat")
+      },1000);
+                
     </script>
     <button onclick="restart()">RESTART</button>
     
@@ -95,9 +110,9 @@
       </tr>
       <tr>
         <td>
-          <button onclick="wood()">CHOP</button><br>
-          <button onclick="stone()">MINE</button><br>
-          <button onclick="hunt()">HUNT</button>
+          <button onclick="wood('woodspeed')">CHOP</button><br>
+          <button onclick="stone('stonespeed')">MINE</button><br>
+          <button onclick="meat('meatspeed')">HUNT</button>
         </td>
         <td>
           <button onclick="rock()">BIGGER ROCK</button><br>
@@ -116,6 +131,7 @@
           <div id="meatspeed">-</div>
           <div id="autowood">-</div>
           <div id="autostone">-</div>
+          <div id="automeat">-</div>
           
 
         </td>
