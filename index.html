@@ -123,6 +123,13 @@
       },1000);
                 
     </script>
+    
+    <style>
+      .redtext {
+        color: red;
+      }
+      
+    </style>
     <button onclick="restart()">RESTART</button>
     
   </head>
@@ -141,16 +148,16 @@
         </td>
         <td>
           <button onclick="buy('rock')">BIGGER ROCK</button><br>
-          <p>(+1 stone/click)</p>
+          <p class="redtext">(+1 stone/click)</p>
           
           <button onclick="buy('stick')">POINTY STICK</button><br>
-          <p>(1 meat/click)</p>
+          <p class="redtext">(1 meat/click)</p>
           
           <button onclick="buy('axe1')">STONE AXE</button><br>
-          <p>(2 wood/click)</p>
+          <p class="redtext">(2 wood/click)</p>
           
           <button onclick="buy('windupaxe1')">WIND UP AXE</button><br>
-          <p>(1 wood/second)</p>
+          <p class="redtext">(1 wood/second)</p>
           
           
         </td>
