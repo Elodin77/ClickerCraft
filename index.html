@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.5</p>
+    <p>Version 0.51</p>
 
     
     <script>
@@ -92,7 +92,7 @@
           
         }
         if (item == "axe1") {
-          if (getCookie("wood") > 19 and getCookie("stone") > 9) {
+          if (getCookie("wood") > 19 && getCookie("stone") > 9) {
             setCookie("woodspeed", 2, 365);
             setCookie("wood", Number(getCookie("wood"))-20, 365);
             setCookie("stone", Number(getCookie("stone"))-10, 365);
@@ -102,7 +102,7 @@
           }
         }
         if (item=="windupaxe1") {
-          if (getCookie("wood") > 499 and getCookie("meat") > 299) {
+          if (getCookie("wood") > 499 && getCookie("meat") > 299) {
             setCookie("autowood", 1, 365);
             setCookie("wood", Number(getCookie("wood"))-500, 365);
             setCookie("meat", Number(getCookie("meat"))-300, 365);
