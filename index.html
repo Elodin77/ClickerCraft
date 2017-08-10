@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.5.1</p>
+    <p>Version 0.6.1</p>
 
     
     <script>
@@ -128,6 +128,9 @@
       .redtext {
         color: red;
       }
+      .greentext {
+        color: green;
+      }
       
     </style>
     <button onclick="restart()">RESTART</button>
@@ -148,6 +151,7 @@
         </td>
         <td>
           <button onclick="buy('rock')">BIGGER ROCK</button><br>
+          <p class="greentext">Increases stone mining speed.</p>
           <p class="redtext">(+1 stone/click)</p>
           
           <button onclick="buy('stick')">POINTY STICK</button><br>
