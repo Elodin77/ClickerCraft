@@ -10,6 +10,20 @@
       
       
       //FUNCTIONS
+      function WriteFile(text) {
+
+        var fh = fopen("\Leaderboard\leaderboard.txt", 3); // Open the file for writing
+
+        if(fh!=-1) {
+          var str = text;
+          fwrite(fh, str); // Write the string to a file
+          fclose(fh); // Close the file 
+        }
+
+      }
+
+
+      
       function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -121,6 +135,7 @@
             setCookie("stone", Number(getCookie("stone")) - 1, 365);
             setCookie("meat", Number(getCookie("meat")) - 1, 365);
             update();
+            WriteFile(getCookie("gold"));
             
           }
           else {
