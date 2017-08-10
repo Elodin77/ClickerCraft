@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.7.3</p>
+    <p>Version 0.7.4</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a>
 
     
@@ -120,12 +120,15 @@
             setCookie("wood", Number(getCookie("wood")) - 1, 365);
             setCookie("stone", Number(getCookie("stone")) - 1, 365);
             setCookie("meat", Number(getCookie("meat")) - 1, 365);
+            update();
+            
           }
           else {
             alert("You do not have enough stuff! You need 1 of all the basic resources");
           }
         }
       }
+      
       
       //NON-FUNCTIONS
       
