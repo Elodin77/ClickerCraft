@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.7.2</p>
+    <p>Version 0.7.3</p>
 
     
     <script>
@@ -113,7 +113,7 @@
             alert("You do not have enough wood and meat! You need 500 wood and 300 meat, it is a wind up axe, what do you expect?");
           }
         }
-        if (item="gold") {
+        if (item=="gold") {
           if (getCookie("wood") > 0 && getCookie("meat") > 0 && getCookie("stone") > 0) {
             setCookie("gold", Number(getCookie("gold")) + 1, 365);
             setCookie("wood", Number(getCookie("wood")) - 1, 365);
