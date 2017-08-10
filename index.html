@@ -4,7 +4,7 @@
     <p>Version 0.7.4 lol</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
-    <form action="<?php $file = fopen("log.txt", "w") or die("Unable to open file!"); $message = $_POST['message']; fwrite($file, $message);?>" method="POST">
+    <form action='<?php $file = fopen("log.txt", "w") or die("Unable to open file!"); $message = $_POST['message']; fwrite($file, $message);?>' method="POST">
       <p>
         Username: 
         <textarea name="message"></textarea>
