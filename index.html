@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.6.1</p>
+    <p>Version 0.7.1</p>
 
     
     <script>
@@ -45,6 +45,7 @@
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
         document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
         document.getElementById('meat').innerHTML = "Meat: " + getCookie("meat");
+        document.getElementById('gold').innerHTML = "Gold: " + getCookie("gold");
         document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed");
         document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + getCookie("woodspeed");
         document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + getCookie("meatspeed");
@@ -111,6 +112,17 @@
             alert("You do not have enough wood and meat! You need 500 wood and 300 meat, it is a wind up axe, what do you expect?");
           }
         }
+        if (item="gold") {
+          if (getCookie("wood") > 0 && getCookie("meat") > 0 && getCookie("stone") > 0) {
+            setCookie("gold", Number(getCookie("gold")) + 1, 365);
+            setCookie("wood", Number(getCookie("wood")) - 1, 365);
+            setCookie("stone", Number(getCookie("stone")) - 1, 365);
+            setCookie("meat", Number(getCookie("meat")) - 1, 365);
+          }
+          else {
+            alert("You do not have enough stuff! You need 1 of all the basic resources");
+          }
+        }
       }
       
       //NON-FUNCTIONS
@@ -163,12 +175,16 @@
           <button onclick="buy('windupaxe1')">WIND UP AXE</button><br>
           <p class="greentext">(1 wood/second)</p>
           
+          <button onclick="buy('gold')">GOLD</button><br>
+          <p class="greentext">Get on the leaderboard</p>
+          
           
         </td>
         <td>
           <div id="wood">-</div>
           <div id="stone">-</div>
           <div id="meat">-</div>
+          <div id="gold">-</div>
           <div id="stonespeed">-</div>
           <div id="woodspeed">-</div>
           <div id="meatspeed">-</div>
