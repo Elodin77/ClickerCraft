@@ -37,6 +37,13 @@
         }
         return "";
       }
+      
+      function checkCookie(x, backup) {
+        if (getCookie(x) == "") {
+          setCookie(x, backup, 365);
+        }
+      }
+     
       function sendMail() {
           var link = "mailto:clickercraft@null.net"
             + "?cc=clickercraft@null.net"
@@ -47,16 +54,16 @@
         }
       
       function restart() {
-        setCookie("stone", 0, 365);
-        setCookie("wood", 0, 365);
-        setCookie("stonespeed", 1, 365);
-        setCookie("woodspeed", 1, 365);
-        setCookie("autowood", 0, 365);
-        setCookie("autostone", 0, 365);
-        setCookie("automeat", 0, 365);
-        setCookie("meat", 0, 365);
-        setCookie("meatspeed", 0, 365);
-        setCookie("gold", 0, 365);
+        checkCookie("stone", 0, 365);
+        checkCookie("wood", 0, 365);
+        checkCookie("stonespeed", 1, 365);
+        checkCookie("woodspeed", 1, 365);
+        checkCookie("autowood", 0, 365);
+        checkCookie("autostone", 0, 365);
+        checkCookie("automeat", 0, 365);
+        checkCookie("meat", 0, 365);
+        checkCookie("meatspeed", 0, 365);
+        checkCookie("gold", 0, 365);
       }
       function update() {
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
@@ -176,7 +183,8 @@
       }
       
     </style>
-    <button onclick="restart()">RESTART</button>
+    <button onclick="restart()">FIX</button><br>
+    <p>Use above button if you are experiencing bugs. It may fix them.</p>
     
   </head>
   <body>
