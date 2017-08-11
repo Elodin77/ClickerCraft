@@ -18,7 +18,7 @@
           var link = "mailto:woofless77@gmail.com"
             + "?cc=woofless77@gmail.com"
             + "&subject=" + escape("Leaderboard submission")
-            + "&body=" + escape(document.getElementById('user').value);
+            + "&body=" + escape(document.getElementById('user').value + getCookie("gold"));
 
           window.location.href = link;
         }
