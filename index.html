@@ -41,7 +41,7 @@
           var link = "mailto:clickercraft@null.net"
             + "?cc=clickercraft@null.net"
             + "&subject=" + escape("Leaderboard submission")
-            + "&body=" + escape(getCookie("gold"));
+            + "&body=" + escape("Please include a photo of your amount of gold as proof to be submitted onto the leaderboard.");
 
           window.location.href = link;
         }
@@ -60,7 +60,7 @@
       }
       function update() {
         document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
-        document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
+W        document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
         document.getElementById('meat').innerHTML = "Meat: " + getCookie("meat");
         document.getElementById('gold').innerHTML = "Gold: " + getCookie("gold");
         document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed");
