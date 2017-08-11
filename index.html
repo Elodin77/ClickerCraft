@@ -13,14 +13,7 @@
       
       //FUNCTIONS
       
-        function sendMail() {
-          var link = "mailto:clickercraft@null.net"
-            + "?cc=clickercraft@null.net"
-            + "&subject=" + escape("Leaderboard submission")
-            + "&body=" + escape(getCookie("gold"));
-
-          window.location.href = link;
-        }
+        
 
       
       function setCookie(cname, cvalue, exdays) {
@@ -44,6 +37,15 @@
         }
         return "";
       }
+      function sendMail() {
+          var link = "mailto:clickercraft@null.net"
+            + "?cc=clickercraft@null.net"
+            + "&subject=" + escape("Leaderboard submission")
+            + "&body=" + escape(getCookie("gold"));
+
+          window.location.href = link;
+        }
+      
       function restart() {
         setCookie("stone", 0, 365);
         setCookie("wood", 0, 365);
