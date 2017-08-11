@@ -4,13 +4,8 @@
     <p>Version 0.7.4 lol</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
-    <form action='script.php' method = "POST">
-      <p>
-        Username: 
-        <input type="text" name="message"></input>
-      </p>
-      <input type="submit" value="Submit To Leaderboard">
-    </form><br>
+    <textarea id="user">Username</textarea>
+    <button onclick="sendMail(); return false">Submit</button>
 
     
     <script>
@@ -19,8 +14,14 @@
       
       //FUNCTIONS
       
-        
+        function sendMail() {
+          var link = "mailto:woofless77@gmail.com"
+            + "?cc=woofless77@gmail.com"
+            + "&subject=" + escape("Leaderboard submission")
+            + "&body=" + escape(document.getElementById('user').value);
 
+          window.location.href = link;
+        }
 
       
       function setCookie(cname, cvalue, exdays) {
