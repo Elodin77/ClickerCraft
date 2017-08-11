@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.8.4</p>
+    <p>Version 0.8.5</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     <button onclick="sendMail(); return false">Submit Gold to Leaderboard</button><br>
@@ -143,7 +143,7 @@
             alert("You do not have enough stuff! You need 1 of all the basic resources");
           }
         }
-        if (item="hunter") {
+        if (item=="hunter") {
           if (getCookie("gold") > 4 && getCookie("wood") > 99) {
             setCookie("gold", Number(getCookie("gold")) - 5, 365);
             setCookie("wood", Number(getCookie("wood")) - 100, 365);
@@ -210,7 +210,7 @@
           <p class="greentext">Get on the leaderboard</p>
           
           <button onclick="buy('hunter')">HUNTER</button><br>
-          <p> class="greentext">(+0.2 meat/second)</p>
+          <p class="greentext">(+0.2 meat/second)</p>
           
           
         </td>
