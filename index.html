@@ -1,10 +1,13 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.8.5</p>
+    <p>Version 0.9.6</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
-    <button onclick="sendMail(); return false">Submit Gold to Leaderboard</button><br>
+    <button onclick="sendMail('<photo gold for proof>', 'Leaderboard submission'); return false">Submit Gold to Leaderboard</button><br>
+    <button onclick="sendMail('<what is your problem?>', 'PROBLEM'); return false">Contact dev</button><br>
+    <p>Use this to complain about a bug, error, propose a new item, upgrade... to the dev</p><br>
+    
 
     
     <script>
@@ -44,11 +47,11 @@
         }
       }
      
-      function sendMail() {
+      function sendMail(text, sub) {
           var link = "mailto:clickercraft@null.net"
             + "?cc=clickercraft@null.net"
-            + "&subject=" + escape("Leaderboard submission")
-            + "&body=" + escape("Please include a photo of your amount of gold as proof to be submitted onto the leaderboard.");
+            + "&subject=" + escape(sub)
+            + "&body=" + escape(text);
 
           window.location.href = link;
         }
