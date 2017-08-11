@@ -135,12 +135,22 @@
             setCookie("wood", Number(getCookie("wood")) - 1, 365);
             setCookie("stone", Number(getCookie("stone")) - 1, 365);
             setCookie("meat", Number(getCookie("meat")) - 1, 365);
-            update();
+            
             
             
           }
           else {
             alert("You do not have enough stuff! You need 1 of all the basic resources");
+          }
+        }
+        if (item="hunter") {
+          if (getCookie("gold") > 4 && getCookie("wood") > 99) {
+            setCookie("gold", Number(getCookie("gold")) - 5, 365);
+            setCookie("wood", Number(getCookie("wood")) - 100, 365);
+            setCookie("automeat", Number(getCookie("automeat")) + 0.2, 365);
+          }
+          else {
+            alert("You really can't do math. A hunter needs gold and wood. 100 wood isn't enough, you also need 5 gold.");
           }
         }
       }
@@ -198,6 +208,9 @@
           
           <button onclick="buy('gold')">GOLD</button><br>
           <p class="greentext">Get on the leaderboard</p>
+          
+          <button onclick="buy('hunter')">HUNTER</button><br>
+          <p> class="greentext">(+0.2 meat/second)</p>
           
           
         </td>
