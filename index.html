@@ -4,8 +4,7 @@
     <p>Version 0.7.4 lol</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
-    <textarea id="user">Username</textarea><br>
-    <button onclick="sendMail(); return false">Submit</button><br>
+    <button onclick="sendMail(); return false">Submit Gold to Leaderboard</button><br>
 
     
     <script>
@@ -18,7 +17,7 @@
           var link = "mailto:clickercraft@null.net"
             + "?cc=clickercraft@null.net"
             + "&subject=" + escape("Leaderboard submission")
-            + "&body=" + escape(document.getElementById('user').value + getCookie("gold"));
+            + "&body=" + escape(getCookie("gold"));
 
           window.location.href = link;
         }
