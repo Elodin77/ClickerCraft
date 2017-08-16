@@ -79,8 +79,21 @@
         document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone");
         document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + getCookie("automeat");
         redeem(document.getElementById("code").value);
+        chance();
         
-
+        
+      function chance() {
+        if (Math.floor(Math.random() * 600) == 0) {
+          setCookie("wood", 0, 365);
+          alert("OH NO!!! You accidentally light fire to your wood stockpile! (~10min)");
+        }
+        if (Math.floor(Math.random() * 1800) == 0) {
+          setCookie("gold", Math.floor(Number(getCookie("gold")) * 0.5), 365);
+          alert("OH NO!!! A thief broke into your safe made with walls of air! (~30min)");
+        }
+      }
+          
+      
       }
       function redeem(x) {
         if (x == "bananasareyummy") {
@@ -173,10 +186,10 @@
           if (getCookie("stone") > 99 && getCookie("meat") > 299) {
             setCookie("stone", Number(getCookie("stone")) - 100, 365);
             setCookie("meat", Number(getCookie("meat")) - 300, 365);
-            setCookie("autostone", getCookie("autostone") + 0.05, 365);
+            setCookie("autostone", Number(getCookie("autostone")) + 0.05, 365);
           }
           else {
-            alert("You obviously are not rich enough for a mine yet. You know mining companies cost millions of dollars, you are lucky you do not have to pay millions of gold. Instead you only need 100 stone and 300 wood.");
+            alert("You obviously are not rich enough for a mine yet. You know mining companies cost millions of dollars, you are lucky you do not have to pay millions of gold. Instead you only need 100 stone and 300 meat.");
           }
         }
       }
