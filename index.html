@@ -78,8 +78,15 @@
         document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood");
         document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone");
         document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + getCookie("automeat");
+        redeem(document.forms.code);
         
 
+      }
+      function redeem(x) {
+        if (x == "Bananasareyummy") {
+          alert("Lol");
+          document.forms.code = "";
+        }
       }
       function wood(x) {
         setCookie("wood", Number(getCookie("wood")) + Number(getCookie(x)), 365);
@@ -244,13 +251,20 @@
     <p>Use this to complain about a bug, error, propose a new item, upgrade... to the dev</p><br>
     <button onclick="restart()">FIX</button>
     <p>Use this button if you are experiencing bugs. It may fix them.</p><br><br>
+    <form>
+      Redeem Code:<br>
+      <input type="text" name="code"><br>
+    </form>
     
     <p>Thanx to the amazing uber skills of me. This game now works offline after you have clicked FIX at least once.</p>
     
     <br><br>
     <b>Updates</b>
-    <p>Game now works offline\nNerfed hunters</p>
-    
+    <p>
+      Game now works offline
+      Nerfed hunters
+    </p>
+     
     
     
    
