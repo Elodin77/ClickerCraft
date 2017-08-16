@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.11.7</p>
+    <p>Version 1.11.7</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     <button onclick="sendMail('<photo gold for proof>', 'Leaderboard submission'); return false">Submit Gold to Leaderboard</button><br>
@@ -87,9 +87,21 @@
           setCookie("wood", 0, 365);
           alert("OH NO!!! You accidentally light fire to your wood stockpile! (~10min)");
         }
+        if (Math.floor(Math.random() * 600) == 0) {
+          setCookie("stone", 0, 365);
+          alert("OH NO!!! Your neat pile of round stones has collapsed and the stones are rolling down a cliff! (~10min)");
+        }
+        if (Math.floor(Math.random() * 600) == 0) {
+          setCookie("meat", 0, 365);
+          alert("OH NO!!! A lion charged through your drying meat and ate it all! (~10min)");
+        }
         if (Math.floor(Math.random() * 1800) == 0) {
           setCookie("gold", Math.floor(Number(getCookie("gold")) * 0.5), 365);
           alert("OH NO!!! A thief broke into your safe made with walls of air! (~30min)");
+        }
+        if (Math.floor(Math.random() * 3600) == 0) {
+          setCookie("autowood", Math.floor(Number(getCookie("autowood")) * 0.5), 365);
+          alert("OH NO!!! A tornado ripper through your wind up axes! (~60min)");
         }
       }
           
@@ -290,10 +302,11 @@
     <p>Thanx to the amazing uber skills of me. This game now works offline after you have clicked FIX at least once. You will also have to manually type in the url rather than just reloading or using suggested.</p>
     
     <br><br>
-    <b>Updates</b>
+    <b>Major Updates</b>
     <p>
-      Game now works offline
+      Added disasters
       Nerfed hunters
+      Game now works offline 
     </p>
      
     
