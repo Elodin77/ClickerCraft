@@ -146,11 +146,11 @@
           }
         }
         if (item=="gold") {
-          if (getCookie("wood") > 0 && getCookie("meat") > 0 && getCookie("stone") > 0) {
+          if (getCookie("wood") > 99 && getCookie("meat") > 99 && getCookie("stone") > 99) {
             setCookie("gold", Number(getCookie("gold")) + 1, 365);
-            setCookie("wood", Number(getCookie("wood")) - 1, 365);
-            setCookie("stone", Number(getCookie("stone")) - 1, 365);
-            setCookie("meat", Number(getCookie("meat")) - 1, 365);
+            setCookie("wood", Number(getCookie("wood")) - 100, 365);
+            setCookie("stone", Number(getCookie("stone")) - 100, 365);
+            setCookie("meat", Number(getCookie("meat")) - 100, 365);
             
             
             
@@ -160,8 +160,8 @@
           }
         }
         if (item=="hunter") {
-          if (getCookie("gold") > 4 && getCookie("wood") > 19) {
-            setCookie("gold", Number(getCookie("gold")) - 5, 365);
+          if (getCookie("gold") > 1 && getCookie("wood") > 19) {
+            setCookie("gold", Number(getCookie("gold")) - 2, 365);
             setCookie("wood", Number(getCookie("wood")) - 20, 365);
             setCookie("automeat", Number(getCookie("automeat")) + 0.01, 365);
           }
