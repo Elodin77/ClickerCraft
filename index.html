@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.10.7</p>
+    <p>Version 0.11.7</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     <button onclick="sendMail('<photo gold for proof>', 'Leaderboard submission'); return false">Submit Gold to Leaderboard</button><br>
@@ -169,6 +169,16 @@
             alert("You really can't do math. A hunter needs gold and wood. 20 wood isn't enough, you also need 5 gold.");
           }
         }
+        if (item="stonemine") {
+          if (getCookie("stone") > 99 && getCookie("meat") > 299) {
+            setCookie("stone", Number(getCookie("stone")) - 100, 365);
+            setCookie("meat", Number(getCookie("meat")) - 300, 365);
+            setCookie("autostone", getCookie("autostone") + 0.05, 365);
+          }
+          else {
+            alert("You obviously are not rich enough for a mine yet. You know mining companies cost millions of dollars, you are lucky you do not have to pay millions of gold. Instead you only need 100 stone and 300 wood.");
+          }
+        }
       }
       
       
@@ -218,8 +228,10 @@
           <button onclick="meat('meatspeed')">HUNT</button>
         </td>
         <td>
+          <button onclick="buy('gold')">GOLD</button><br>
+          <p class="greentext">Get on the leaderboard</p>
+      
           <button onclick="buy('rock')">BIGGER ROCK</button><br>
-          
           <p class="greentext">(+1 stone/click)</p>
           
           <button onclick="buy('stick')">POINTY STICK</button><br>
@@ -228,14 +240,14 @@
           <button onclick="buy('axe1')">STONE AXE</button><br>
           <p class="greentext">(2 wood/click)</p>
           
-          <button onclick="buy('windupaxe1')">WIND UP AXE</button><br>
-          <p class="greentext">(+0.05 wood/second)</p>
-          
-          <button onclick="buy('gold')">GOLD</button><br>
-          <p class="greentext">Get on the leaderboard</p>
+          <button onclick="buy('stonemine')">STONE MINE</button><br>
+          <p class="greentext">(+0.05 stone/second)</p>  
           
           <button onclick="buy('hunter')">HUNTER</button><br>
           <p class="greentext">(+0.01 meat/second)</p>
+          
+          <button onclick="buy('windupaxe1')">WIND UP AXE</button><br>
+          <p class="greentext">(+0.05 wood/second)</p>
           
           
         </td>
