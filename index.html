@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 0.9.7</p>
+    <p>Version 0.10.7</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     <button onclick="sendMail('<photo gold for proof>', 'Leaderboard submission'); return false">Submit Gold to Leaderboard</button><br>
@@ -78,14 +78,14 @@
         document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood");
         document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone");
         document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + getCookie("automeat");
-        redeem(document.forms.code);
+        redeem(document.getElementById("code").value);
         
 
       }
       function redeem(x) {
         if (x == "Bananasareyummy") {
-          alert("Lol");
-          document.forms.code = "";
+          alert("Good job. U read my code.");
+          document.getElementById("code").value = "";
         }
       }
       function wood(x) {
@@ -251,10 +251,9 @@
     <p>Use this to complain about a bug, error, propose a new item, upgrade... to the dev</p><br>
     <button onclick="restart()">FIX</button>
     <p>Use this button if you are experiencing bugs. It may fix them.</p><br><br>
-    <form>
-      Redeem Code:<br>
-      <input type="text" name="code"><br>
-    </form>
+    <textarea id="code">
+      <type redeem code here>
+    </textarea>
     
     <p>Thanx to the amazing uber skills of me. This game now works offline after you have clicked FIX at least once.</p>
     
