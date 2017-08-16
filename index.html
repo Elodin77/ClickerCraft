@@ -129,13 +129,13 @@
           }
         }
         if (item=="windupaxe1") {
-          if (getCookie("wood") > 499 && getCookie("meat") > 299) {
-            setCookie("autowood", 1, 365);
-            setCookie("wood", Number(getCookie("wood"))-500, 365);
+          if (getCookie("wood") > 99 && getCookie("meat") > 299) {
+            setCookie("autowood", Number(getCookie("autowood")) + 0.05, 365);
+            setCookie("wood", Number(getCookie("wood"))-100, 365);
             setCookie("meat", Number(getCookie("meat"))-300, 365);
           }
           else {
-            alert("You do not have enough wood and meat! You need 500 wood and 300 meat, it is a wind up axe, what do you expect?");
+            alert("You do not have enough wood and meat! You need 100 wood and 300 meat, it is a wind up axe, what do you expect?");
           }
         }
         if (item=="gold") {
@@ -213,7 +213,7 @@
           <p class="greentext">(2 wood/click)</p>
           
           <button onclick="buy('windupaxe1')">WIND UP AXE</button><br>
-          <p class="greentext">(1 wood/second)</p>
+          <p class="greentext">(+0.05 wood/second)</p>
           
           <button onclick="buy('gold')">GOLD</button><br>
           <p class="greentext">Get on the leaderboard</p>
