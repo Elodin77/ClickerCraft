@@ -153,13 +153,13 @@
           }
         }
         if (item=="hunter") {
-          if (getCookie("gold") > 4 && getCookie("wood") > 99) {
+          if (getCookie("gold") > 4 && getCookie("wood") > 19) {
             setCookie("gold", Number(getCookie("gold")) - 5, 365);
             setCookie("wood", Number(getCookie("wood")) - 100, 365);
-            setCookie("automeat", Number(getCookie("automeat")) + 0.2, 365);
+            setCookie("automeat", Number(getCookie("automeat")) + 0.01, 365);
           }
           else {
-            alert("You really can't do math. A hunter needs gold and wood. 100 wood isn't enough, you also need 5 gold.");
+            alert("You really can't do math. A hunter needs gold and wood. 20 wood isn't enough, you also need 5 gold.");
           }
         }
       }
