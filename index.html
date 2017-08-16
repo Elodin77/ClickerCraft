@@ -68,10 +68,10 @@
         checkCookie("gold", 0, 365);
       }
       function update() {
-        document.getElementById('wood').innerHTML = "Wood: " + getCookie("wood");
-        document.getElementById('stone').innerHTML = "Stone: " + getCookie("stone");
-        document.getElementById('meat').innerHTML = "Meat: " + getCookie("meat");
-        document.getElementById('gold').innerHTML = "Gold: " + getCookie("gold");
+        document.getElementById('wood').innerHTML = "Wood: " + Number(getCookie("wood"));
+        document.getElementById('stone').innerHTML = "Stone: " + Number(getCookie("stone"));
+        document.getElementById('meat').innerHTML = "Meat: " + Number(getCookie("meat"));
+        document.getElementById('gold').innerHTML = "Gold: " + Number(getCookie("gold"));
         document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed");
         document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + getCookie("woodspeed");
         document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + getCookie("meatspeed");
