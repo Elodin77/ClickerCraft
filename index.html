@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 1.12.12</p>
+    <p>Version 1.12.13</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     
@@ -226,12 +226,10 @@
             setCookie("wood", Number(getCookie("wood")) - 100, 365);
             setCookie("stone", Number(getCookie("stone")) - 100, 365);
             setCookie("meat", Number(getCookie("meat")) - 100, 365);
-            
-            
-            
+           
           }
           else {
-            alert("You do not have enough stuff! You need 1 of all the basic resources");
+            alert("You do not have enough stuff! You need 100 of all the basic resources");
           }
         }
         if (item=="hunter") {
@@ -244,7 +242,7 @@
             alert("You really can't do math. A hunter needs gold and wood. 20 wood isn't enough, you also need 5 gold.");
           }
         }
-        if (item="stonemine") {
+        if (item=="stonemine") {
           if (getCookie("stone") > 99 && getCookie("meat") > 299) {
             setCookie("stone", Number(getCookie("stone")) - 100, 365);
             setCookie("meat", Number(getCookie("meat")) - 300, 365);
