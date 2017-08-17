@@ -3,6 +3,7 @@
     <title>ClickerCraft</title>
     <p>Version 1.12.7</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
     
     <button onclick="sendMail('<photo gold for proof>', 'Leaderboard submission'); return false">Submit Gold to Leaderboard</button><br>
     
@@ -296,30 +297,30 @@
       </tr>
       <tr>
         <td>
-          <button onclick="wood('woodspeed')">CHOP</button><br>
-          <button onclick="stone('stonespeed')">MINE</button><br>
-          <button onclick="meat('meatspeed')">HUNT</button>
+          <button class="button1" onclick="wood('woodspeed')">CHOP</button><br>
+          <button class="button1" onclick="stone('stonespeed')">MINE</button><br>
+          <button class="button1" onclick="meat('meatspeed')">HUNT</button>
         </td>
         <td>
-          <button onclick="buy('gold')">GOLD</button><br>
+          <button class="button1" onclick="buy('gold')">GOLD</button><br>
           <p class="greentext">Get on the leaderboard</p>
       
-          <button onclick="buy('rock')">BIGGER ROCK</button><br>
+          <button class="button1" onclick="buy('rock')">BIGGER ROCK</button><br>
           <p class="greentext">(+1 stone/click)</p>
           
-          <button onclick="buy('stick')">POINTY STICK</button><br>
+          <button class="button1" onclick="buy('stick')">POINTY STICK</button><br>
           <p class="greentext">(1 meat/click)</p>
           
-          <button onclick="buy('axe1')">STONE AXE</button><br>
+          <button class="button1" onclick="buy('axe1')">STONE AXE</button><br>
           <p class="greentext">(2 wood/click)</p>
           
-          <button onclick="buy('stonemine')">STONE MINE</button><br>
+          <button class="button1" onclick="buy('stonemine')">STONE MINE</button><br>
           <p class="greentext">(+0.05 stone/second)</p>  
           
-          <button onclick="buy('hunter')">HUNTER</button><br>
+          <button class="button1" onclick="buy('hunter')">HUNTER</button><br>
           <p class="greentext">(+0.01 meat/second)</p>
           
-          <button onclick="buy('windupaxe1')">WIND UP AXE</button><br>
+          <button class="button1" onclick="buy('windupaxe1')">WIND UP AXE</button><br>
           <p class="greentext">(+0.05 wood/second)</p>
           
           
@@ -341,9 +342,9 @@
       </tr>
     </table>
     <hr>
-    <button class="button1" onclick="sendMail('<what is your problem?>', 'PROBLEM'); return false">Contact dev</button>
+    <button onclick="sendMail('<what is your problem?>', 'PROBLEM'); return false">Contact dev</button>
     <p>Use this to complain about a bug, error, propose a new item, upgrade... to the dev</p><br>
-    <button class="button1" onclick="restart()">FIX</button>
+    <button onclick="restart()">FIX</button>
     <p>Use this button if you are experiencing bugs. It may fix them.</p><br>
     Redeem Code: <textarea rows=1 id="code"></textarea><br>
     
