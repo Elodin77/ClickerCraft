@@ -1,9 +1,9 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 1.12.7</p>
+    <p>Version 1.12.8</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+    
     
     <button onclick="sendMail('<photo gold for proof>', 'Leaderboard submission'); return false">Submit Gold to Leaderboard</button><br>
     
@@ -65,7 +65,19 @@
       //FUNCTIONS
       
         
+      function preventZoom(e) {
+        var t2 = e.timeStamp;
+        var t1 = e.currentTarget.dataset.lastTouch || t2;
+        var dt = t2 - t1;
+        var fingers = e.touches.length;
+        e.currentTarget.dataset.lastTouch = t2;
 
+        if (!dt || dt > 500 || fingers > 1) return; // not double-tap
+
+        e.preventDefault();
+        e.target.click();
+      }
+      woodbutton.addEventListener('touchstart', preventZoom);
       
       function setCookie(cname, cvalue, exdays) {
         var d = new Date();
@@ -297,7 +309,7 @@
       </tr>
       <tr>
         <td>
-          <button class="button1" onclick="wood('woodspeed')">CHOP</button><br>
+          <button name="woodbutton" class="button1" onclick="wood('woodspeed')">CHOP</button><br>
           <button class="button1" onclick="stone('stonespeed')">MINE</button><br>
           <button class="button1" onclick="meat('meatspeed')">HUNT</button>
         </td>
