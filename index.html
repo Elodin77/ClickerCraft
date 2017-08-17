@@ -1,10 +1,10 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 1.12.10</p>
+    <p>Version 1.12.11</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
     
     <button onclick="sendMail('<photo gold for proof>', 'Leaderboard submission'); return false">Submit Gold to Leaderboard</button><br>
     
@@ -60,7 +60,9 @@
 
     
     <script>
-      
+      document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+      });
       
       
       //FUNCTIONS
