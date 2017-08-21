@@ -122,12 +122,12 @@
         document.getElementById('stone').innerHTML = "Stone: " + parseInt(getCookie("stone"));
         document.getElementById('meat').innerHTML = "Meat: " + parseInt(getCookie("meat"));
         document.getElementById('gold').innerHTML = "Gold: " + parseInt(getCookie("gold"));
-        document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed");
-        document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + getCookie("woodspeed");
-        document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + getCookie("meatspeed");
-        document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood");
-        document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone");
-        document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + getCookie("automeat");
+        document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + parseInt(getCookie("stonespeed"));
+        document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + parseInt(getCookie("woodspeed"));
+        document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + parseInt(getCookie("meatspeed"));
+        document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + parseInt(getCookie("autowood"));
+        document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + parseInt(getCookie("autostone"));
+        document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + parseInt(getCookie("automeat"));
         redeem(document.getElementById("code").value);
         chance();
         
