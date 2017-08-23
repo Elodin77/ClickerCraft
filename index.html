@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 1.12.14</p>
+    <p>Version 1.13.14</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     
@@ -122,12 +122,12 @@
         document.getElementById('stone').innerHTML = "Stone: " + parseInt(getCookie("stone"));
         document.getElementById('meat').innerHTML = "Meat: " + parseInt(getCookie("meat"));
         document.getElementById('gold').innerHTML = "Gold: " + parseInt(getCookie("gold"));
-        document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + (getCookie("stonespeed"));
-        document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + (getCookie("woodspeed"));
-        document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + (getCookie("meatspeed"));
-        document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + (getCookie("autowood"));
-        document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + (getCookie("autostone"));
-        document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + (getCookie("automeat"));
+        document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed").toFixed(2);
+        document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + getCookie("woodspeed").toFixed(2);
+        document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + getCookie("meatspeed").toFixed(2);
+        document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood").toFixed(2);
+        document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone").toFixed(2);
+        document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + getCookie("automeat").toFixed(2);
         redeem(document.getElementById("code").value);
         chance();
         
