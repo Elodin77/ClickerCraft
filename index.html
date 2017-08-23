@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 1.13.14</p>
+    <p>Version 1.13.15</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     
@@ -122,12 +122,12 @@
         document.getElementById('stone').innerHTML = "Stone: " + parseInt(getCookie("stone"));
         document.getElementById('meat').innerHTML = "Meat: " + parseInt(getCookie("meat"));
         document.getElementById('gold').innerHTML = "Gold: " + parseInt(getCookie("gold"));
-        document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + getCookie("stonespeed");
-        document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + getCookie("woodspeed");
-        document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + getCookie("meatspeed");
-        document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + getCookie("autowood");
-        document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + getCookie("autostone");
-        document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + getCookie("automeat");
+        document.getElementById("stonespeed").innerHTML = "Stone Mining Speed: " + Math.round(getCookie("stonespeed") * 100) / 100;
+        document.getElementById("woodspeed").innerHTML = "Wood Chopping Speed: " + Math.round(getCookie("woodspeed") * 100) / 100;
+        document.getElementById("meatspeed").innerHTML = "Meat Hunting Speed: " + Math.round(getCookie("meatspeed") * 100) / 100;
+        document.getElementById("autowood").innerHTML = "Automatic Wood Chopping Rate: " + Math.round(getCookie("autowood") * 100) / 100;
+        document.getElementById("autostone").innerHTML = "Automatic Stone Mining Rate: " + Math.round(getCookie("autostone") * 100) / 100;
+        document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + Math.round(getCookie("automeat") * 100) / 100;
         redeem(document.getElementById("code").value);
         chance();
         
