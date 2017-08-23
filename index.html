@@ -249,7 +249,7 @@
             setCookie("autostone", Number(getCookie("autostone")) + 0.05, 365);
           }
           else {
-            alert("You obviously are not rich enough for a mine yet. You know mining companies cost millions of dollars, you are lucky you do not have to pay millions of gold. Instead you only need 100 stone and 300 meat.");
+            alert("You obviously are not rich enough for a mine yet. You know mining companies cost millions of dollars, you are lucky you do not have to pay millions of gold. Instead you only need " + (100 * Math.pow(1.07, Number(getCookie("autostone")))).toString() + "stone and 300 meat.");
           }
         }
       }
