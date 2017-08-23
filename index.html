@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>ClickerCraft</title>
-    <p>Version 1.13.15</p>
+    <p>Version 2.13.15</p>
     <a href="https://thenumnut.github.io/ClickerCraft/Leaderboard">Leaderboard</a><br>
     
     
@@ -60,7 +60,7 @@
 
     
     <script>
-   
+      
       
       
       //FUNCTIONS
@@ -151,7 +151,7 @@
         }
         if (Math.floor(Math.random() * 3600) == 0) {
           setCookie("autowood", Math.floor(Number(getCookie("autowood")) * 0.5), 365);
-          alert("OH NO!!! A tornado ripper through your wind up axes! (~60min)");
+          alert("OH NO!!! A tornado ripped through your wind up axes! (~60min)");
         }
       }
           
@@ -159,7 +159,7 @@
       }
       function redeem(x) {
         if (x == "bananasareyummy") {
-          alert("Good job. U read my code.");
+          alert("I agree.");
           document.getElementById("code").value = "";
         }
       }
@@ -180,12 +180,12 @@
         
         if (item == "rock") {
           if (getCookie("stone") > Math.pow(Number(getCookie("stonespeed")), 3)-1) {
-            setCookie("stone", Number(getCookie("stone")) - Math.pow(Number(getCookie("stonespeed")), 3));
+            setCookie("stone", Number(getCookie("stone")) - (50 * Math.pow(1.07, Number(getCookie("stonespeed")))), 365); // 50 is basecost, 1.07 is mutliplier, basecost*mutliplier^#owned
             setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
             
           }
           else {
-            alert("You do not have enough stone! You need " + Math.pow(Number(getCookie("stonespeed")), 3).toString() + " stone.");
+            alert("You do not have enough stone! You need " + (50 * Math.pow(1.07, Number(getCookie("stonespeed")))).toString() + " stone.");
           }
           
         }
@@ -213,11 +213,11 @@
         if (item=="windupaxe1") {
           if (getCookie("wood") > 99 && getCookie("meat") > 299) {
             setCookie("autowood", Number(getCookie("autowood")) + 0.05, 365);
-            setCookie("wood", Number(getCookie("wood"))-100, 365);
-            setCookie("meat", Number(getCookie("meat"))-300, 365);
+            setCookie("wood", (100 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
+            setCookie("meat", (300 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
           }
           else {
-            alert("You do not have enough wood and meat! You need 100 wood and 300 meat, it is a wind up axe, what do you expect?");
+            alert("You do not have enough wood and meat! You need " + (100 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " wood and " + (300 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " meat, it is a wind up axe, what do you expect?");
           }
         }
         if (item=="gold") {
@@ -244,7 +244,7 @@
         }
         if (item=="stonemine") {
           if (getCookie("stone") > 99 && getCookie("meat") > 299) {
-            setCookie("stone", Number(getCookie("stone")) - 100, 365);
+            setCookie("stone", (100 * Math.pow(1.07, Number(getCookie("autostone")))), 365);
             setCookie("meat", Number(getCookie("meat")) - 300, 365);
             setCookie("autostone", Number(getCookie("autostone")) + 0.05, 365);
           }
