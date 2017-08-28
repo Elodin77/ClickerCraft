@@ -211,10 +211,10 @@
           }
         }
         if (item=="windupaxe1") {
-          if (getCookie("wood") > 99 && getCookie("meat") > 299) {
+          if (getCookie("wood") > 100 * Math.pow(1.07, Number(getCookie("autowood"))) && getCookie("meat") > 300 * Math.pow(1.07, Number(getCookie("autowood")))) {
             setCookie("autowood", Number(getCookie("autowood")) + 0.05, 365);
-            setCookie("wood", (100 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
-            setCookie("meat", (300 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
+            setCookie("wood", Number(getCookie("wood")) - (100 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
+            setCookie("meat", Number(getCookie("meat")) - (300 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
           }
           else {
             alert("You do not have enough wood and meat! You need " + (100 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " wood and " + (300 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " meat, it is a wind up axe, what do you expect?");
