@@ -13,17 +13,17 @@
 
 
     //FUNCTIONS
-    var f = "storage.txt";
+    const fs = require('fs')
 
-    writeTextFile(f, "Spoon")
-    writeTextFile(f, "Cheese monkey")
-    writeTextFile(f, "Onion")
+    // Data which will write in a file. 
+    let data = "Learning how to write in a file."
 
-    function writeTextFile(afilename, output) {
-        var txtFile = new File(afilename);
-        txtFile.writeln(output);
-        txtFile.close();
-    }
+    // Write data in 'Output.txt' . 
+    fs.writeFile('storage.txt', data, (err) => {
+
+        // In case of a error throw err. 
+        if (err) throw err;
+    }) 
 
 
 
