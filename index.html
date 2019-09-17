@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>ClickerCraft</title>
-    <p>Version 2.13.17</p>
+    <p>Version 2.13.18</p>
     <a href="https://thenumnut.github.io/ClickerCraft/leaderboard.html">Leaderboard</a>
     <br />
 
@@ -13,17 +13,27 @@
 
 
     //FUNCTIONS
-    const fs = require('fs')
+    var ie_writeFile = function (fname, data) {
+        var fso, fileHandle;
+        fso = new ActiveXObject("Scripting.FileSystemObject");
+        fileHandle = fso.CreateTextFile(fname, true);
+        fileHandle.write(data);
+        fileHandle.close();
+    };
 
-    // Data which will write in a file. 
-    let data = "Learning how to write in a file."
-
-    // Write data in 'Output.txt' . 
-    fs.writeFile('storage.txt', data, (err) => {
-
-        // In case of a error throw err. 
-        if (err) throw err;
-    }) 
+    var ie_readFile = function (fname) {
+        try {
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+            var fso, filehandle, contents;
+            filehandle = fso.OpenTextFile(fname, 1);
+            contents = filehandle.ReadAll();
+            filehandle.Close();
+            return contents;
+        } catch (err) {
+            return null;
+        }
+    };
+    ie_writeFile("storage.txt", "you're awesome");
 
 
 
