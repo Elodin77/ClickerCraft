@@ -1,17 +1,18 @@
 <html>
-  <head>
+<head>
     <title>ClickerCraft</title>
-    <p>Version 2.13.16</p>
-    <a href="https://thenumnut.github.io/ClickerCraft/leaderboard.html">Leaderboard</a><brV
-    
+    <p>Version 2.13.17</p>
+    <a href="https://thenumnut.github.io/ClickerCraft/leaderboard.html">Leaderboard</a>
+    <br />
+
     <link rel="stylesheet" href="stylesheet.css" />
 
-    
-    <script>
-      
-      
-      
-      //FUNCTIONS
+</head>
+<script>
+
+
+
+    //FUNCTIONS
     var f = "storage.txt";
 
     writeTextFile(f, "Spoon")
@@ -23,47 +24,47 @@
         txtFile.writeln(output);
         txtFile.close();
     }
-        
-      
-      
-      function setCookie(cname, cvalue, exdays) {
+
+
+
+    function setCookie(cname, cvalue, exdays) {
         var d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      }
-      function getCookie(cname) {
+    }
+    function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
         var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
         }
         return "";
-      }
-      
-      function checkCookie(x, backup) {
+    }
+
+    function checkCookie(x, backup) {
         if (getCookie(x) == "") {
-          setCookie(x, backup, 365);
+            setCookie(x, backup, 365);
         }
-      }
-     
-      function sendMail(text, sub) {
-          var link = "mailto:clickercraft@null.net"
+    }
+
+    function sendMail(text, sub) {
+        var link = "mailto:clickercraft@null.net"
             + "?cc=clickercraft@null.net"
             + "&subject=" + escape(sub)
             + "&body=" + escape(text);
 
-          window.location.href = link;
-        }
-      
-      function restart() {
+        window.location.href = link;
+    }
+
+    function restart() {
         checkCookie("stone", 0, 365);
         checkCookie("wood", 0, 365);
         checkCookie("stonespeed", 1, 365);
@@ -74,8 +75,8 @@
         checkCookie("meat", 0, 365);
         checkCookie("meatspeed", 0, 365);
         checkCookie("gold", 0, 365);
-      }
-      function update() {
+    }
+    function update() {
         document.getElementById('wood').innerHTML = "Wood: " + parseInt(getCookie("wood"));
         document.getElementById('stone').innerHTML = "Stone: " + parseInt(getCookie("stone"));
         document.getElementById('meat').innerHTML = "Meat: " + parseInt(getCookie("meat"));
@@ -88,217 +89,198 @@
         document.getElementById("automeat").innerHTML = "Automatic Meat Hunting Rate: " + Math.round(getCookie("automeat") * 100) / 100;
         redeem(document.getElementById("code").value);
         chance();
-        
-        
-      function chance() {
-        if (Math.floor(Math.random() * 1200) == 0) {
-          setCookie("wood", 0, 365);
-          alert("OH NO!!! You accidentally light fire to your wood stockpile! (~10min)");
+
+
+        function chance() {
+            if (Math.floor(Math.random() * 1200) == 0) {
+                setCookie("wood", 0, 365);
+                alert("OH NO!!! You accidentally light fire to your wood stockpile! (~10min)");
+            }
+            if (Math.floor(Math.random() * 1200) == 0) {
+                setCookie("stone", 0, 365);
+                alert("OH NO!!! Your neat pile of round stones has collapsed and the stones are rolling down a cliff! (~10min)");
+            }
+            if (Math.floor(Math.random() * 1200) == 0) {
+                setCookie("meat", 0, 365);
+                alert("OH NO!!! A lion charged through your drying meat and ate it all! (~10min)");
+            }
+            if (Math.floor(Math.random() * 1800) == 0) {
+                setCookie("gold", Math.floor(Number(getCookie("gold")) * 0.5), 365);
+                alert("OH NO!!! A thief broke into your safe made with walls of air! (~30min)");
+            }
+            if (Math.floor(Math.random() * 3600) == 0) {
+                setCookie("autowood", Math.floor(Number(getCookie("autowood")) * 0.5), 365);
+                alert("OH NO!!! A tornado ripped through your wind up axes! (~60min)");
+            }
         }
-        if (Math.floor(Math.random() * 1200) == 0) {
-          setCookie("stone", 0, 365);
-          alert("OH NO!!! Your neat pile of round stones has collapsed and the stones are rolling down a cliff! (~10min)");
-        }
-        if (Math.floor(Math.random() * 1200) == 0) {
-          setCookie("meat", 0, 365);
-          alert("OH NO!!! A lion charged through your drying meat and ate it all! (~10min)");
-        }
-        if (Math.floor(Math.random() * 1800) == 0) {
-          setCookie("gold", Math.floor(Number(getCookie("gold")) * 0.5), 365);
-          alert("OH NO!!! A thief broke into your safe made with walls of air! (~30min)");
-        }
-        if (Math.floor(Math.random() * 3600) == 0) {
-          setCookie("autowood", Math.floor(Number(getCookie("autowood")) * 0.5), 365);
-          alert("OH NO!!! A tornado ripped through your wind up axes! (~60min)");
-        }
-      }
-          
-      
-      }
-      function redeem(x) {
+
+
+    }
+    function redeem(x) {
         if (x == "bananasareyummy") {
-          alert("I agree.");
-          document.getElementById("code").value = "";
+            alert("I agree.");
+            document.getElementById("code").value = "";
         }
-      }
-      function wood(x) {
+    }
+    function wood(x) {
         setCookie("wood", Number(getCookie("wood")) + Number(getCookie(x)), 365);
-        
-      }
-      function stone(x) {
+
+    }
+    function stone(x) {
         setCookie("stone", Number(getCookie("stone")) + Number(getCookie(x)), 365);
-        
-      }
-      function meat(x) {
+
+    }
+    function meat(x) {
         setCookie("meat", Number(getCookie("meat")) + Number(getCookie(x)), 365);
-        
-      }
-      
-      function buy(item) {
-        
+
+    }
+
+    function buy(item) {
+
         if (item == "rock") {
-          if (getCookie("stone") > Math.pow(Number(getCookie("stonespeed")), 3)-1) {
-            setCookie("stone", Number(getCookie("stone")) - (50 * Math.pow(1.07, Number(getCookie("stonespeed")))), 365); // 50 is basecost, 1.07 is mutliplier, basecost*mutliplier^#owned
-            setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
-            
-          }
-          else {
-            alert("You do not have enough stone! You need " + (50 * Math.pow(1.07, Number(getCookie("stonespeed")))).toString() + " stone.");
-          }
-          
+            if (getCookie("stone") > Math.pow(Number(getCookie("stonespeed")), 3) - 1) {
+                setCookie("stone", Number(getCookie("stone")) - (50 * Math.pow(1.07, Number(getCookie("stonespeed")))), 365); // 50 is basecost, 1.07 is mutliplier, basecost*mutliplier^#owned
+                setCookie("stonespeed", Number(getCookie("stonespeed")) + 1, 365);
+
+            }
+            else {
+                alert("You do not have enough stone! You need " + (50 * Math.pow(1.07, Number(getCookie("stonespeed")))).toString() + " stone.");
+            }
+
         }
-        
+
         if (item == "stick") {
-          if(getCookie("wood") > 3) {
-            setCookie("meatspeed", 1, 365);
-            setCookie("wood", Number(getCookie("wood"))-4, 365);
-          }
-          else {
-            alert("You do not have enough wood! You need 4 wood. One for the base, one for the middle, one for the top, and one... well... cause I said.");
-          }
-          
+            if (getCookie("wood") > 3) {
+                setCookie("meatspeed", 1, 365);
+                setCookie("wood", Number(getCookie("wood")) - 4, 365);
+            }
+            else {
+                alert("You do not have enough wood! You need 4 wood. One for the base, one for the middle, one for the top, and one... well... cause I said.");
+            }
+
         }
         if (item == "axe1") {
-          if (getCookie("wood") > 19 && getCookie("stone") > 9) {
-            setCookie("woodspeed", 2, 365);
-            setCookie("wood", Number(getCookie("wood"))-20, 365);
-            setCookie("stone", Number(getCookie("stone"))-10, 365);
-          }
-          else {
-            alert("You do not have enough wood and stone! You need 20 wood and 10 stone.");
-          }
+            if (getCookie("wood") > 19 && getCookie("stone") > 9) {
+                setCookie("woodspeed", 2, 365);
+                setCookie("wood", Number(getCookie("wood")) - 20, 365);
+                setCookie("stone", Number(getCookie("stone")) - 10, 365);
+            }
+            else {
+                alert("You do not have enough wood and stone! You need 20 wood and 10 stone.");
+            }
         }
-        if (item=="windupaxe1") {
-          if (getCookie("wood") > 100 * Math.pow(1.07, Number(getCookie("autowood"))) && getCookie("meat") > 300 * Math.pow(1.07, Number(getCookie("autowood")))) {
-            setCookie("autowood", Number(getCookie("autowood")) + 0.05, 365);
-            setCookie("wood", Number(getCookie("wood")) - (100 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
-            setCookie("meat", Number(getCookie("meat")) - (300 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
-          }
-          else {
-            alert("You do not have enough wood and meat! You need " + (100 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " wood and " + (300 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " meat, it is a wind up axe, what do you expect?");
-          }
+        if (item == "windupaxe1") {
+            if (getCookie("wood") > 100 * Math.pow(1.07, Number(getCookie("autowood"))) && getCookie("meat") > 300 * Math.pow(1.07, Number(getCookie("autowood")))) {
+                setCookie("autowood", Number(getCookie("autowood")) + 0.05, 365);
+                setCookie("wood", Number(getCookie("wood")) - (100 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
+                setCookie("meat", Number(getCookie("meat")) - (300 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
+            }
+            else {
+                alert("You do not have enough wood and meat! You need " + (100 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " wood and " + (300 * Math.pow(1.07, Number(getCookie("autowood")))).toString() + " meat, it is a wind up axe, what do you expect?");
+            }
         }
-        if (item=="gold") {
-          if (getCookie("wood") > 99 && getCookie("meat") > 99 && getCookie("stone") > 99) {
-            setCookie("gold", Number(getCookie("gold")) + 1, 365);
-            setCookie("wood", Number(getCookie("wood")) - 100, 365);
-            setCookie("stone", Number(getCookie("stone")) - 100, 365);
-            setCookie("meat", Number(getCookie("meat")) - 100, 365);
-           
-          }
-          else {
-            alert("You do not have enough stuff! You need 100 of all the basic resources");
-          }
+        if (item == "gold") {
+            if (getCookie("wood") > 99 && getCookie("meat") > 99 && getCookie("stone") > 99) {
+                setCookie("gold", Number(getCookie("gold")) + 1, 365);
+                setCookie("wood", Number(getCookie("wood")) - 100, 365);
+                setCookie("stone", Number(getCookie("stone")) - 100, 365);
+                setCookie("meat", Number(getCookie("meat")) - 100, 365);
+
+            }
+            else {
+                alert("You do not have enough stuff! You need 100 of all the basic resources");
+            }
         }
-        if (item=="hunter") {
-          if (getCookie("gold") > 1 && getCookie("wood") > 19) {
-            setCookie("gold", Number(getCookie("gold")) - 2, 365);
-            setCookie("wood", Number(getCookie("wood")) - 20, 365);
-            setCookie("automeat", Number(getCookie("automeat")) + 0.01, 365);
-          }
-          else {
-            alert("You really can't do math. A hunter needs gold and wood. 20 wood isn't enough, you also need 5 gold.");
-          }
+        if (item == "hunter") {
+            if (getCookie("gold") > 1 && getCookie("wood") > 19) {
+                setCookie("gold", Number(getCookie("gold")) - 2, 365);
+                setCookie("wood", Number(getCookie("wood")) - 20, 365);
+                setCookie("automeat", Number(getCookie("automeat")) + 0.01, 365);
+            }
+            else {
+                alert("You really can't do math. A hunter needs gold and wood. 20 wood isn't enough, you also need 5 gold.");
+            }
         }
-        if (item=="stonemine") {
-          if (getCookie("stone") > 99 && getCookie("meat") > 299) {
-            setCookie("stone", (100 * Math.pow(1.07, Number(getCookie("autostone")))), 365);
-            setCookie("meat", Number(getCookie("meat")) - 300, 365);
-            setCookie("autostone", Number(getCookie("autostone")) + 0.05, 365);
-          }
-          else {
-            alert("You obviously are not rich enough for a mine yet. You know mining companies cost millions of dollars, you are lucky you do not have to pay millions of gold. Instead you only need " + (100 * Math.pow(1.07, Number(getCookie("autostone")))).toString() + "stone and 300 meat.");
-          }
+        if (item == "stonemine") {
+            if (getCookie("stone") > 99 && getCookie("meat") > 299) {
+                setCookie("stone", (100 * Math.pow(1.07, Number(getCookie("autostone")))), 365);
+                setCookie("meat", Number(getCookie("meat")) - 300, 365);
+                setCookie("autostone", Number(getCookie("autostone")) + 0.05, 365);
+            }
+            else {
+                alert("You obviously are not rich enough for a mine yet. You know mining companies cost millions of dollars, you are lucky you do not have to pay millions of gold. Instead you only need " + (100 * Math.pow(1.07, Number(getCookie("autostone")))).toString() + "stone and 300 meat.");
+            }
         }
-      }
-      
-      
-      //NON-FUNCTIONS
-      
-      setInterval(function() {
+    }
+
+
+    //NON-FUNCTIONS
+
+    setInterval(function () {
         wood("autowood");
         stone("autostone");
         meat("automeat");
         update();
-      },1000);
-                
-    </script>
-    
-    <style>
-      .redtext {
-        color: red;
-      }
-      .greentext {
-        color: green;
-      }
-      .left{
-        display:inline-block;
-        vertical-align: text-bottom;
-      }
+    }, 1000);
 
-      textarea{
-        margin:0px;
-        vertical-align: text-bottom;
-      }
-      
-    </style>
-    
-    
-  </head>
-  <body>
+</script>
+
+
+
+<body>
     <table style="width:100%">
-      <tr>
-        <th>RESOURCES</th>
-        <th>CRAFTING</th>
-        <th>STUFF</th>
-      </tr>
-      <tr>
-        <td>
-          <button class="button1" onclick="wood('woodspeed')">CHOP</button><br>
-          <button class="button1" onclick="stone('stonespeed')">MINE</button><br>
-          <button class="button1" onclick="meat('meatspeed')">HUNT</button>
-        </td>
-        <td>
-          
-          <button class="button1" onclick="buy('gold')">GOLD</button><br>
-          <p class="greentext">Get on the leaderboard</p>
-      
-          <button class="button1" onclick="buy('rock')">BIGGER ROCK</button><br>
-          <p class="greentext">(+1 stone/click)</p>
-          
-          <button class="button1" onclick="buy('stick')">POINTY STICK</button><br>
-          <p class="greentext">(1 meat/click)</p>
-          
-          <button class="button1" onclick="buy('axe1')">STONE AXE</button><br>
-          <p class="greentext">(2 wood/click)</p>
-          
-          <button class="button1" onclick="buy('stonemine')">STONE MINE</button><br>
-          <p class="greentext">(+0.05 stone/second)</p>  
-          
-          <button class="button1" onclick="buy('hunter')">HUNTER</button><br>
-          <p class="greentext">(+0.01 meat/second)</p>
-          
-          <button class="button1" onclick="buy('windupaxe1')">WIND UP AXE</button><br>
-          <p class="greentext">(+0.05 wood/second)</p>
-          
-          
-          
-        </td>
-        <td>
-          <div id="wood">-</div>
-          <div id="stone">-</div>
-          <div id="meat">-</div>
-          <div id="gold">-</div>
-          <div id="stonespeed">-</div>
-          <div id="woodspeed">-</div>
-          <div id="meatspeed">-</div>
-          <div id="autowood">-</div>
-          <div id="autostone">-</div>
-          <div id="automeat">-</div>
-          
+        <tr>
+            <th>RESOURCES</th>
+            <th>CRAFTING</th>
+            <th>STUFF</th>
+        </tr>
+        <tr>
+            <td>
+                <button class="button1" onclick="wood('woodspeed')">CHOP</button><br>
+                <button class="button1" onclick="stone('stonespeed')">MINE</button><br>
+                <button class="button1" onclick="meat('meatspeed')">HUNT</button>
+            </td>
+            <td>
 
-        </td>
-      </tr>
+                <button class="button1" onclick="buy('gold')">GOLD</button><br>
+                <p class="greentext">Get on the leaderboard</p>
+
+                <button class="button1" onclick="buy('rock')">BIGGER ROCK</button><br>
+                <p class="greentext">(+1 stone/click)</p>
+
+                <button class="button1" onclick="buy('stick')">POINTY STICK</button><br>
+                <p class="greentext">(1 meat/click)</p>
+
+                <button class="button1" onclick="buy('axe1')">STONE AXE</button><br>
+                <p class="greentext">(2 wood/click)</p>
+
+                <button class="button1" onclick="buy('stonemine')">STONE MINE</button><br>
+                <p class="greentext">(+0.05 stone/second)</p>
+
+                <button class="button1" onclick="buy('hunter')">HUNTER</button><br>
+                <p class="greentext">(+0.01 meat/second)</p>
+
+                <button class="button1" onclick="buy('windupaxe1')">WIND UP AXE</button><br>
+                <p class="greentext">(+0.05 wood/second)</p>
+
+
+
+            </td>
+            <td>
+                <div id="wood">-</div>
+                <div id="stone">-</div>
+                <div id="meat">-</div>
+                <div id="gold">-</div>
+                <div id="stonespeed">-</div>
+                <div id="woodspeed">-</div>
+                <div id="meatspeed">-</div>
+                <div id="autowood">-</div>
+                <div id="autostone">-</div>
+                <div id="automeat">-</div>
+
+
+            </td>
+        </tr>
     </table>
     <hr>
     <button onclick="sendMail('<what is your problem?>', 'PROBLEM'); return false">Contact dev</button>
@@ -306,18 +288,18 @@
     <button onclick="restart()">RESTART</button>
     <p>Restarting may fix bugs </p><br>
     Redeem Code: <textarea rows=1 id="code"></textarea><br>
-    
+
     <p>Thanks to the amazing uber skills of me. This game now works offline after you have clicked FIX at least once. You will also have to manually type in the url rather than just reloading or using suggested.</p>
-    
+
     <br><br>
     <b>Major Updates</b>
     <p>Added disasters</p>
     <p>Nerfed hunters</p>
     <p>Game now works offline</p>
-     
-    
-    
-   
-    
-  </body>
+
+
+
+
+
+</body>
 </html>
