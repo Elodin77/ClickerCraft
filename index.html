@@ -1,8 +1,9 @@
 <html>
 <head>
     <title>ClickerCraft</title>
-    <p>Version 2.13.18</p>
+    <p>Version 2.13.19</p>
     <a href="https://thenumnut.github.io/ClickerCraft/leaderboard.html">Leaderboard</a>
+    <a href="save.py">Save Game</a>
     <br />
 
     <link rel="stylesheet" href="stylesheet.css" />
@@ -13,27 +14,6 @@
 
 
     //FUNCTIONS
-    var ie_writeFile = function (fname, data) {
-        var fso, fileHandle;
-        fso = new ActiveXObject("Scripting.FileSystemObject");
-        fileHandle = fso.CreateTextFile(fname, true);
-        fileHandle.write(data);
-        fileHandle.close();
-    };
-
-    var ie_readFile = function (fname) {
-        try {
-            fso = new ActiveXObject("Scripting.FileSystemObject");
-            var fso, filehandle, contents;
-            filehandle = fso.OpenTextFile(fname, 1);
-            contents = filehandle.ReadAll();
-            filehandle.Close();
-            return contents;
-        } catch (err) {
-            return null;
-        }
-    };
-    ie_writeFile("storage.txt", "you're awesome");
 
 
 
