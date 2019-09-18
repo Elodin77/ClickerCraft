@@ -3,12 +3,10 @@
     <title>ClickerCraft</title>
     <p>Version 2.13.21</p>
     <a href="https://thenumnut.github.io/ClickerCraft/leaderboard.html">Leaderboard</a>
-    <form name="save" action="cgi-bin/save.py">
-        <input type="submit" value="Save">
-    </form>
-        <br />
+    <button onclick="submit_to_leaderboard()">Submit Gold to Leaderboard</button>
+    <br>
 
-        <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="stylesheet.css" />
 
 </head>
 <script>
@@ -17,7 +15,11 @@
 
     //FUNCTIONS
 
-
+    function submit_to_leaderboard() {
+        var text = "";
+        text += getCookie("gold");
+        sendMail(text, 'Leaderboard submission');
+    }
 
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
@@ -48,8 +50,8 @@
     }
 
     function sendMail(text, sub) {
-        var link = "mailto:clickercraft@null.net"
-            + "?cc=clickercraft@null.net"
+        var link = "mailto:woofless77@gmail.com"
+            + "?cc=woofless77@gmail.com"
             + "&subject=" + escape(sub)
             + "&body=" + escape(text);
 
