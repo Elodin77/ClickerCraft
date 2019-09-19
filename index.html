@@ -2,8 +2,6 @@
 <head>
     <title>ClickerCraft</title>
     <p>Version 2.13.21</p>
-    <a href="https://thenumnut.github.io/ClickerCraft/leaderboard.html">Leaderboard</a>
-    <button onclick="submit_to_leaderboard()">Submit Gold to Leaderboard</button>
     <br>
 
     <link rel="stylesheet" href="stylesheet.css" />
@@ -15,11 +13,6 @@
 
     //FUNCTIONS
 
-    function submit_to_leaderboard() {
-        var text = "";
-        text += getCookie("gold");
-        sendMail(text, 'Leaderboard submission');
-    }
 
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
@@ -49,14 +42,6 @@
         }
     }
 
-    function sendMail(text, sub) {
-        var link = "mailto:woofless77@gmail.com"
-            + "?cc=woofless77@gmail.com"
-            + "&subject=" + escape(sub)
-            + "&body=" + escape(text);
-
-        window.location.href = link;
-    }
 
     function restart() {
         checkCookie("stone", 0, 365);
@@ -111,7 +96,7 @@
 
     }
     function redeem(x) {
-        if (x == "bananasareyummy") {
+        if (x == "urapotato") {
             alert("I agree.");
             document.getElementById("code").value = "";
         }
@@ -166,6 +151,7 @@
         if (item == "windupaxe1") {
             if (getCookie("wood") > 100 * Math.pow(1.07, Number(getCookie("autowood"))) && getCookie("meat") > 300 * Math.pow(1.07, Number(getCookie("autowood")))) {
                 setCookie("autowood", Number(getCookie("autowood")) + 0.05, 365);
+                setCookie("autowood", Number(getCookie("autowood")) + 0.05, 365);
                 setCookie("wood", Number(getCookie("wood")) - (100 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
                 setCookie("meat", Number(getCookie("meat")) - (300 * Math.pow(1.07, Number(getCookie("autowood")))), 365);
             }
@@ -192,7 +178,7 @@
                 setCookie("automeat", Number(getCookie("automeat")) + 0.01, 365);
             }
             else {
-                alert("You really can't do math. A hunter needs gold and wood. 20 wood isn't enough, you also need 5 gold.");
+                alert("You really can't do math. A hunter needs gold and wood. 20 wood isn't enough, you also need 2 gold.");
             }
         }
         if (item == "stonemine") {
